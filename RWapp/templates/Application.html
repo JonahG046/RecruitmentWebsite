@@ -44,16 +44,6 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-                <div class="form-group col">
-                    <label for="question">What is your preferred programming language?</label>
-                    <select class="form-control" id="question" name="question" required>
-                        <option value="python">Python</option>
-                        <option value="java">Java</option>
-                        <option value="javascript">JavaScript</option>
-                        <option value="c++">C++</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
             </div>
 
             <!-- Grades Section styled like Personal Information -->
@@ -66,44 +56,46 @@
                             <thead>
                                 <tr>
                                     <th>Class</th>
+                                    <th>In Progress</th>
+                                    <th>Next Semester</th>
                                     <th>A</th>
                                     <th>B</th>
                                     <th>C</th>
                                     <th>D</th>
-                                    <th>In Progress</th>
-                                    <th>Next Semester</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>Math 101</td>
+                                    <td><input type="radio" name="math_grade" value="IP"></td>
+                                    <td><input type="radio" name="math_grade" value="NS"></td>
                                     <td><input type="radio" name="math_grade" value="A"></td>
                                     <td><input type="radio" name="math_grade" value="B"></td>
                                     <td><input type="radio" name="math_grade" value="C"></td>
                                     <td><input type="radio" name="math_grade" value="D"></td>
-                                    <td><input type="radio" name="math_grade" value="IP"></td>
-                                    <td><input type="radio" name="math_grade" value="NS"></td>
                                 </tr>
                                 <tr>
                                     <td>English 201</td>
+                                    <td><input type="radio" name="english_grade" value="IP"></td>
+                                    <td><input type="radio" name="english_grade" value="NS"></td>
                                     <td><input type="radio" name="english_grade" value="A"></td>
                                     <td><input type="radio" name="english_grade" value="B"></td>
                                     <td><input type="radio" name="english_grade" value="C"></td>
                                     <td><input type="radio" name="english_grade" value="D"></td>
-                                    <td><input type="radio" name="english_grade" value="IP"></td>
-                                    <td><input type="radio" name="english_grade" value="NS"></td>
                                 </tr>
                                 <tr>
                                     <td>History 301</td>
+                                    <td><input type="radio" name="history_grade" value="IP"></td>
+                                    <td><input type="radio" name="history_grade" value="NS"></td>
                                     <td><input type="radio" name="history_grade" value="A"></td>
                                     <td><input type="radio" name="history_grade" value="B"></td>
                                     <td><input type="radio" name="history_grade" value="C"></td>
                                     <td><input type="radio" name="history_grade" value="D"></td>
-                                    <td><input type="radio" name="history_grade" value="IP"></td>
-                                    <td><input type="radio" name="history_grade" value="NS"></td>
                                 </tr>
                             </tbody>
                         </table>
+                        <label for="essay">Were any of the grades shaded with a + or -?  If so, which classes and what were the grades?</label>
+                        <textarea class="form-control" id="essay" name="essay" rows="2" placeholder="Your essay here..." required></textarea>
                     </div>
                 </div>
             </div>

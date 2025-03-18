@@ -47,19 +47,3 @@ table {
     text-align: center;
     border: 1px solid #ddd;
   }
-  
-  th {
-    background-color: #f4f4f4;
-  }
-  
-  td input {
-    margin: 0 auto;
-  }
-  
-  th:nth-child(6), td:nth-child(6) {
-    width: 150px;
-  }
-  
-  th:nth-child(7), td:nth-child(7) {
-    width: 150px;
-  }
