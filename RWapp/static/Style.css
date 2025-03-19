@@ -47,3 +47,15 @@ table {
     text-align: center;
     border: 1px solid #ddd;
   }
+
+
+
+.custom-select {
+        appearance: none; /* Hides default arrow */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: url('https://cdn-icons-png.flaticon.com/16/271/271228.png') no-repeat right 10px center;
+        background-size: 12px;
+        padding-right: 30px; /* Makes space for the arrow */
+        cursor: pointer;
+}
