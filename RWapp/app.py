@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, request, flash, redirect, session
+from flask import Flask, redirect, url_for, render_template, request, flash, redirect, session, jsonify
 from flask_bcrypt import Bcrypt
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
@@ -154,6 +154,33 @@ def logout():
   session.pop('phone', None)
   session.pop('starId', None)
   return redirect(url_for('home'))
+
+
+@app.route('/api/program_info', methods=['GET'])
+def api_program_info():
+  program_info = {
+      "program_name": "Minnpolly Software Engineering Program",
+      "description": "A comprehensive program combining academic learning with real-world industry experience.",
+      "requirements": ["Strong programming skills", "Motivated to work in a team environment"],
+      "duration": "2 and a half years",
+      "credits": 60
+  }
+  return jsonify(program_info)
+
+@app.route('/api/faq', methods=['GET'])
+def api_faq():
+  faqs = [
+      {
+          "question": "What is the duration of the program?",
+          "answer": "The program lasts for 2 and a half years."
+      },
+      {
+          "question": "What are the prerequisites for the program?",
+          "answer": "You need to have strong programming skills and be motivated to work in a team environment."
+      }
+  ]
+  return jsonify(faqs)
+
 
 if __name__ == '__main__':
   app.run(debug=True)
