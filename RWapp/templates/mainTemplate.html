@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width" initial-scale="1">
   <title>{% block title%}{%endblock%}</title>
   <link rel="stylesheet" href="{{ url_for ('static', filename='bootstrap.css') }}"> 
-  <link rel="stylesheet" href="{{ url_for('static', filename='FAQStyle.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='ApplicationStyle.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
   <script src="{{ url_for('static', filename='popper.min.js') }}"></script>
   <script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
 </head>
@@ -72,7 +71,7 @@
 {%if foot%}
 <!--Footer-->
 <div class="container-fluid">
-  <footer class="row row-cols-3 py-0 mt-5 border-top justify-content-center flex-wrap fs-5 text-start" style="background-color:#463066;--bs-link-color:gold;">
+  <footer class="row row-cols-3 mt-3 border-top justify-content-center flex-wrap fs-5 text-start" style="background-color:#463066;--bs-link-color:gold;">
     <div class="col border border-dark border-2">
       <div class="foot-block" style="height: 200px;">
       <p class="fs-2 text-center">About</p>

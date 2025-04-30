@@ -11,43 +11,111 @@
 </header>
 <body>
     <h1>Personal Information</h1>
-      <div class="card-body">
-          <form action="/Apply" method="POST">
-            <div class="row px-5 mx-5">
-              <div class="form-group col">
-                <label for="first">First Name</label>
-                <input type="text" class="form-control" id="first" name="first" placeholder="First Name" required>
-              </div>
-              <div class="form-group col">
-                <label for="last">Last Name</label>
-                <input type="text" class="form-control" id="last" name="last" placeholder="Last Name" required>
-              </div>
+    <div class="card-body">
+        <form action="/Apply" method="POST">
+            <div class="row px-5 mx-5"><!--input question-->
+                <div class="form-group col">
+                    <label for="first">First Name</label>
+                    <input type="text" class="form-control" id="first" name="first" placeholder="First Name" required>
+                </div>
+                <div class="form-group col">
+                    <label for="last">Last Name</label>
+                    <input type="text" class="form-control" id="last" name="last" placeholder="Last Name" required>
+                </div>
             </div>
             <div class="row px-5 mx-5">
-            <div class="form-group col">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                <div class="form-group col">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group col">
+                    <label for="phone">Phone Number</label>
+                    <input type="int" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                </div>
             </div>
-            <div class="form-group col">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            <div class="row px-5 mx-5"> 
+                <!--mutli-choice-->
+                <div class="form-group col">
+                    <label for="question">What is your preferred programming language?</label>
+                    <select class="form-control custom-select" id="question" name="question" required>
+                        <option value="" disabled selected>-- Select an option --</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="c++">C++</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group col">
+                </div>
             </div>
+
+            <!-- Grades Section styled like Personal Information -->
+            <h1>Grades Information</h1>
+            <div class="card-body">
+                <div class="row px-5 mx-5">
+                    <div class="form-group col">
+                        <label for="grades">Select Your Grades:</label>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>In Progress</th>
+                                    <th>Next Semester</th>
+                                    <th>A</th>
+                                    <th>B</th>
+                                    <th>C</th>
+                                    <th>D</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Math 101</td>
+                                    <td><input type="radio" name="math_grade" value="IP"></td>
+                                    <td><input type="radio" name="math_grade" value="NS"></td>
+                                    <td><input type="radio" name="math_grade" value="A"></td>
+                                    <td><input type="radio" name="math_grade" value="B"></td>
+                                    <td><input type="radio" name="math_grade" value="C"></td>
+                                    <td><input type="radio" name="math_grade" value="D"></td>
+                                </tr>
+                                <tr>
+                                    <td>English 201</td>
+                                    <td><input type="radio" name="english_grade" value="IP"></td>
+                                    <td><input type="radio" name="english_grade" value="NS"></td>
+                                    <td><input type="radio" name="english_grade" value="A"></td>
+                                    <td><input type="radio" name="english_grade" value="B"></td>
+                                    <td><input type="radio" name="english_grade" value="C"></td>
+                                    <td><input type="radio" name="english_grade" value="D"></td>
+                                </tr>
+                                <tr>
+                                    <td>History 101</td>
+                                    <td><input type="radio" name="history_grade" value="IP"></td>
+                                    <td><input type="radio" name="history_grade" value="NS"></td>
+                                    <td><input type="radio" name="history_grade" value="A"></td>
+                                    <td><input type="radio" name="history_grade" value="B"></td>
+                                    <td><input type="radio" name="history_grade" value="C"></td>
+                                    <td><input type="radio" name="history_grade" value="D"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <label for="essay">Were any of the grades shaded with a + or -?  If so, which classes and what were the grades?</label>
+                        <textarea class="form-control" id="essay" name="essay" rows="2" placeholder="Your essay here..." required></textarea>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;"></div>
+                <div class="row px-5 mx-5">
+                    <div class="form-group col">
+                        <label for="file-upload"> Upload an unofficial copy of your transcript(s). If you have transferred courses into the university, include those transcripts as well.</label>
+                        <input type="file" class="form-control" id="file-upload" name="file-upload" required>
+                    </div>
+                </div>
             </div>
-            <div class="row px-5 mx-5">
-              <div class="form-group col">
-                <label for="starid">Star-ID</label>
-                <input type="text" class="form-control" id="starid" name="starid" placeholder="No Star-Id? Leave this blank!">
-              </div>
-              <div class="form-group col">
-                <label for="phone">Phone Number</label>
-                <input type="int" class="form-control" id="phone" name="phone" placeholder="Phone Number">
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary float-end me-5">Apply Now</button>
-          </form>
-        </div>
-      </div>
-    </container>
-    {%endblock%}
-  </body>
-  </html>
+
+
+            <div style="margin-top: 20px;"></div>
+            <button type="submit" class="btn btn-primary d-block ms-auto me-5">Apply Now</button>
+        </form>
+    </div>
+</body>
+{%endblock%}
+</html>
