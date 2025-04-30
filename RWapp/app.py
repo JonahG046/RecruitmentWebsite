@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request, flash, redirect, session, jsonify
 from flask_bcrypt import Bcrypt
 from flask_mysqldb import MySQL
+import MySQLdb
 import MySQLdb.cursors
 import re
 
@@ -180,6 +181,67 @@ def api_faq():
       }
   ]
   return jsonify(faqs)
+
+@app.route('/api/interviews/slots', methods=['GET'])
+def api_interview_slots():
+  # Example data for interview slots
+  interview_slots = [
+      {
+          "date": "2023-10-01",
+          "time": "10:00 AM",
+          "location": "Minnesota State University, Mankato"
+      },
+      {
+          "date": "2023-10-01",
+          "time": "11:00 AM",
+          "location": "online"
+      },
+      {
+          "date": "2023-10-02",
+          "time": "09:00 AM",
+          "location": "Minnesota State University, Mankato"
+      }
+  ]
+  return jsonify(interview_slots)
+
+@app.route('/api/login', methods=['POST'])
+def api_login():
+  data = request.get_json()
+  email = data.get('email')
+  password = data.get('password')
+
+  if not email or not password:
+    return jsonify({"error": "Email and password are required."}), 400
+  
+  cursor = mydb.connection.cursor(MySQLdb.cursors.DictCursor)
+  cursor.execute("SELECT * FROM profiles WHERE email = %s", (email,))
+  user = cursor.fetchone()
+
+  if user:
+    if bcrypt.check_password_hash(user['password'], password):
+      session['user'] = user['email']
+      session['first'] = user['first_name']
+      session['last'] = user['last_name']
+      session['phone'] = user['phone']
+      session['starId'] = user['starid']
+      cursor.close()
+      return jsonify({
+          "message": "Login successful",
+          "first_name": user['first_name'],
+          "last_name": user['last_name'],
+          "email": user['email']
+        }), 200
+    else:
+      cursor.close()
+      return jsonify({"error": "Invalid password."}), 401
+  else:
+    cursor.close()
+    return jsonify({"error": "User not found."}), 404
+
+
+
+
+
 
 
 if __name__ == '__main__':
